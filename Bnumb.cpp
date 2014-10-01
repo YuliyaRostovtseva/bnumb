@@ -17,6 +17,7 @@ Bnumb::Bnumb()
 	this->digits[0] = 0;
 }
 
+
 Bnumb::Bnumb(const char* instring)
 {
 	//Конструктор от входной строки
@@ -342,7 +343,8 @@ Bnumb Bnumb::Divide(const Bnumb& X, const Bnumb& Y, Bnumb &rem) const
 
 	if (divider == Bnumb((int)0))
 	{
-		throw DIV_BY_ZERO;
+		printf("DIV_BY_ZERO!!!!\n");
+		exit(1);
 	}
 
 	if (rem < divider)
@@ -479,6 +481,7 @@ bool Bnumb::operator>(const Bnumb& Y)
 	return this->compare(Y) > 0;
 }
 
+
 bool Bnumb::operator>=(const Bnumb& Y)
 {
 	return this->compare(Y) >= 0;
@@ -502,6 +505,16 @@ bool Bnumb::operator==(const Bnumb& Y)
 bool Bnumb::operator!=(const Bnumb& Y)
 {
 	return this->compare(Y) != 0;
+}
+
+char* Bnumb::__str__()
+{
+	return GetString();
+}
+
+char* Bnumb::__repr__()
+{
+	return GetString();
 }
 
 Bnumb Bnumb::operator++()

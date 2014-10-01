@@ -18,6 +18,7 @@ public:
 
 	char* GetString(); // функция получения строки в 10-й записи
 
+
 	// Операции с файлами
 	bool readtxt(const char* path);
 	bool writetxt(const char* path);
@@ -35,6 +36,8 @@ public:
 	bool operator<=(const Bnumb& Y);
 	bool operator==(const Bnumb& Y);
 	bool operator!=(const Bnumb& Y);
+	char* __str__();
+	char* __repr__();
 
 
 
